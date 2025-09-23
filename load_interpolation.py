@@ -44,7 +44,7 @@ for i in range(n_segments):
     cadence = st.number_input(f"Cadence (steps/min) for segment {i+1}", min_value=0, max_value=300, value=160)
 
     load_per_step = get_load_per_step(speed, screening_data)
-    segment_load = load_per_step * cadence * duration  # total load = load per step * steps/min * minutes
+    segment_load = load_per_step * cadence * duration/2  # total load = load per step * steps/min * minutes
     run_plan.append((speed, duration, load_per_step, cadence, segment_load))
 
     total_load += segment_load
